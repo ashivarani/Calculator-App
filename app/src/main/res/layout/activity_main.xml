@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".MainActivity">
+    <TextClock
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="00:00:00"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:background="@color/psky"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:format12Hour="hh:mm:ss"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="40sp"
+        android:backgroundTint="@color/black"
+      android:textColor="@color/black"
+        android:padding="10dp"
+        android:layout_gravity="end"
+        android:id="@+id/input" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="60sp"
+        android:textColor="@color/black"
+        android:padding="10dp"
+        android:layout_gravity="end"
+        android:id="@+id/output" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="@color/cardview_light_background"
+        android:background="@color/white"
+        android:gravity="bottom">
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/buttons_layout"
+            />
+    </RelativeLayout>
+
+
+</LinearLayout>
