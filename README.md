@@ -8,4 +8,4 @@ MyCalculator App:->Features:
 
 -->Added Toast messages for updates
 
--->Added Features of calculator
+-->Added Features of general calculator
