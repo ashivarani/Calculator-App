@@ -16,6 +16,24 @@
     <color name="psky"> #b3ecff</color>
     <color name="pb"> #8cb3d9</color>
     <color name="yellow"> #1a1a00</color>
-    <color name="gold"> #ffd9b3
-    </color>
+    <color name="gold"> #ffd9b3</color>
+        <!-- App Background -->
+        <color name="background_royal_blue">#0D1B2A</color> <!-- Dark navy blue -->
+
+        <!-- Number Buttons -->
+        <color name="number_button_bg">#1E88E5</color> <!-- Royal blue -->
+        <color name="number_button_text">#FFFFFF</color> <!-- White -->
+
+        <!-- Operator Buttons -->
+        <color name="operator_button_bg">#1565C0</color> <!-- Deep royal blue -->
+        <color name="operator_button_text">#FFEB3B</color> <!-- Bright yellow -->
+
+        <!-- Equal Button -->
+        <color name="equal_button_bg">#F57C00</color> <!-- Bright orange -->
+        <color name="equal_button_text">#FFFFFF</color> <!-- White -->
+
+        <!-- Special Buttons (AC, C, OFF) -->
+        <color name="special_button_bg">#C62828</color> <!-- Strong red -->
+        <color name="special_button_text">#FFFFFF</color> <!-- White -->
+
 </resources>

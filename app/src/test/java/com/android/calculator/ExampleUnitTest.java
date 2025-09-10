@@ -1,4 +1,4 @@
-package com.example.mycalculator;
+package com.android.calculator;
 
 import org.junit.Test;
 
