@@ -5,7 +5,7 @@
 //file:noinspection GrDeprecatedAPIUsage
 plugins {
     id 'com.android.application'
-    id 'org.jetbrains.kotlin.android' version '2.2.10'
+    id 'org.jetbrains.kotlin.android' version '2.2.20'
 }
 
 /**
@@ -47,8 +47,8 @@ android {
      * Sets source and target compatibility to Java 1.8.
      */
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 
     /**
@@ -56,7 +56,7 @@ android {
      * Sets JVM target version to 1.8.
      */
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = '11'
     }
 }
 
@@ -66,14 +66,24 @@ android {
  * and testing libraries for unit and instrumented tests.
  */
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:2.2.10"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:2.2.20"
     implementation 'androidx.core:core-ktx:1.17.0'
     implementation 'androidx.appcompat:appcompat:1.7.1'
     implementation 'com.google.android.material:material:1.13.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
     implementation 'androidx.gridlayout:gridlayout:1.1.0'
-
+    implementation 'net.objecthunter:exp4j:0.4.8'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.3.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.7.0'
+}
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
 }

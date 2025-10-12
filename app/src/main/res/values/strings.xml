@@ -1,6 +1,37 @@
 <resources>
+    <!-- App -->
     <string name="app_name">My Calculator</string>
-        <string name="channel_name">Channel</string>
-        <string name="channel_description">Channel Description</string>
+    <string name="calculator_app_title">Calculator App</string>
 
+    <!-- Notification -->
+    <string name="channel_name">Calculator Channel</string>
+    <string name="channel_description">Notifications for calculator operations</string>
+
+    <!-- Menu -->
+    <string name="menu_history">History</string>
+
+    <!-- Buttons -->
+    <string name="button_off">Del</string>
+    <string name="button_clear">C</string>
+    <string name="button_all_clear">AC</string>
+    <string name="button_0">0</string>
+    <string name="button_1">1</string>
+    <string name="button_2">2</string>
+    <string name="button_3">3</string>
+    <string name="button_4">4</string>
+    <string name="button_5">5</string>
+    <string name="button_6">6</string>
+    <string name="button_7">7</string>
+    <string name="button_8">8</string>
+    <string name="button_9">9</string>
+    <string name="button_add">+</string>
+    <string name="button_subtract">-</string>
+    <string name="button_multiply">×</string>
+    <string name="button_divide">/</string>
+    <string name="button_dot">.</string>
+    <string name="button_equal">=</string>
+    <string name="button_percentage">%</string>
+
+    <!-- Example -->
+    <string name="example_calculation">3 + 2 * 5 – 4 / 2 = 6 </string>
 </resources>

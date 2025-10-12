@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.gridlayout.widget.GridLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.gridlayout.widget.GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:alignmentMode="alignMargins"
@@ -11,227 +11,168 @@
 
     <!-- Row 0 -->
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/off"
-        android:text="OFF"
-        android:textColor="@android:color/white"
-        android:backgroundTint="#387B99"
+        android:id="@+id/button_off"
+        android:text="@string/button_off"
+        android:backgroundTint="@color/_387b99"
         android:textSize="18sp"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_columnWeight="1"
-        app:layout_rowWeight="1"/>
+        style="@style/Buttons"
+        tools:ignore="VisualLintButtonSize" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/clear"
-        android:text="C"
-        android:textColor="@android:color/white"
-        android:backgroundTint="#387B99"
+        android:id="@+id/button_clear"
+        android:text="@string/button_clear"
+        android:backgroundTint="@color/_387b99"
         android:textSize="18sp"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_columnWeight="1"
-        app:layout_rowWeight="1"/>
+        style="@style/Buttons"
+        tools:ignore="VisualLintButtonSize" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/all"
-        android:text="AC"
-        android:textColor="@android:color/white"
-        android:backgroundTint="#387B99"
+        android:id="@+id/button_all_clear"
+        android:text="@string/button_all_clear"
+        android:backgroundTint="@color/_387b99"
         android:textSize="18sp"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_columnWeight="1"
-        app:layout_rowWeight="1"/>
+        style="@style/Buttons"
+        tools:ignore="VisualLintButtonSize" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/division"
-        android:text="/"
-        android:textColor="@android:color/white"
-        android:backgroundTint="#A2375A"
-    android:textSize="18sp"
-    android:layout_width="0dp"
-    android:layout_height="0dp"
-    app:layout_columnWeight="1"
-    app:layout_rowWeight="1"/>
+        android:id="@+id/button_divide"
+        android:text="@string/button_divide"
+        android:backgroundTint="@color/a2375a"
+        android:textSize="18sp"
+        style="@style/Buttons"
+        tools:ignore="VisualLintButtonSize" />
 
     <!-- Row 1 -->
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn7"
-        android:text="7"
-        android:textColor="@android:color/white"
-        android:backgroundTint="#40928A"
+        android:id="@+id/button_7"
+        android:text="@string/button_7"
+        android:backgroundTint="@color/_40928a"
         android:textSize="20sp"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_columnWeight="1"
-        app:layout_rowWeight="1"/>
+        style="@style/Buttons"
+        tools:ignore="VisualLintButtonSize" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn8"
-        android:text="8"
-        android:textColor="@android:color/white"
-        android:backgroundTint="#40928A"
+        android:id="@+id/button_8"
+        android:text="@string/button_8"
+        android:backgroundTint="@color/_40928a"
         android:textSize="20sp"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_columnWeight="1"
-        app:layout_rowWeight="1"/>
+        style="@style/Buttons"
+        tools:ignore="VisualLintButtonSize" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn9"
-        android:text="9"
-        android:textColor="@android:color/white"
-        android:backgroundTint="#40928A"
+        android:id="@+id/button_9"
+        android:text="@string/button_9"
+        android:backgroundTint="@color/_40928a"
         android:textSize="20sp"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_columnWeight="1"
-        app:layout_rowWeight="1"/>
+        style="@style/Buttons"
+        tools:ignore="VisualLintButtonSize" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/multiply"
-        android:text="×"
-        android:textColor="@android:color/white"
-        android:backgroundTint="#A2375A"
+        android:id="@+id/button_multiply"
+        android:text="@string/button_multiply"
+        android:backgroundTint="@color/a2375a"
         android:textSize="18sp"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_columnWeight="1"
-        app:layout_rowWeight="1"/>
+        style="@style/Buttons"
+        tools:ignore="VisualLintButtonSize" />
 
     <!-- Row 2 -->
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn4"
-        android:text="4"
-        android:textColor="@android:color/white"
-        android:backgroundTint="#40928A"
+        android:id="@+id/button_4"
+        android:text="@string/button_4"
+        android:backgroundTint="@color/_40928a"
         android:textSize="20sp"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_columnWeight="1"
-        app:layout_rowWeight="1"/>
+        style="@style/Buttons"
+        tools:ignore="VisualLintButtonSize" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn5"
-        android:text="5"
-        android:textColor="@android:color/white"
-        android:backgroundTint="#40928A"
+        android:id="@+id/button_5"
+        android:text="@string/button_5"
+        android:backgroundTint="@color/_40928a"
         android:textSize="20sp"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_columnWeight="1"
-        app:layout_rowWeight="1"/>
+        style="@style/Buttons"
+        tools:ignore="VisualLintButtonSize" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn6"
-        android:text="6"
-        android:textColor="@android:color/white"
-        android:backgroundTint="#40928A"
+        android:id="@+id/button_6"
+        android:text="@string/button_6"
+        android:backgroundTint="@color/_40928a"
         android:textSize="20sp"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_columnWeight="1"
-        app:layout_rowWeight="1"/>
+        style="@style/Buttons"
+        tools:ignore="VisualLintButtonSize" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/add"
-        android:text="+"
-        android:textColor="@android:color/white"
-        android:backgroundTint="#A2375A"
+        android:id="@+id/button_add"
+        android:text="@string/button_add"
+        android:backgroundTint="@color/a2375a"
         android:textSize="18sp"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_columnWeight="1"
-        app:layout_rowWeight="1"/>
+        style="@style/Buttons"
+        tools:ignore="VisualLintButtonSize" />
 
     <!-- Row 3 -->
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn1"
-        android:text="1"
-        android:textColor="@android:color/white"
-        android:backgroundTint="#40928A"
+        android:id="@+id/button_1"
+        android:text="@string/button_1"
+        android:backgroundTint="@color/_40928a"
         android:textSize="20sp"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_columnWeight="1"
-        app:layout_rowWeight="1"/>
+        style="@style/Buttons"
+        tools:ignore="VisualLintButtonSize" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn2"
-        android:text="2"
-        android:textColor="@android:color/white"
-        android:backgroundTint="#40928A"
+        android:id="@+id/button_2"
+        android:text="@string/button_2"
+        android:backgroundTint="@color/_40928a"
         android:textSize="20sp"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_columnWeight="1"
-        app:layout_rowWeight="1"/>
+        style="@style/Buttons"
+        tools:ignore="VisualLintButtonSize" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn3"
-        android:text="3"
-        android:textColor="@android:color/white"
-        android:backgroundTint="#40928A"
+        android:id="@+id/button_3"
+        android:text="@string/button_3"
+        android:backgroundTint="@color/_40928a"
         android:textSize="20sp"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_columnWeight="1"
-        app:layout_rowWeight="1"/>
+        style="@style/Buttons"
+        tools:ignore="VisualLintButtonSize" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/sub"
-        android:text="-"
-        android:textColor="@android:color/white"
-        android:backgroundTint="#A2375A"
+        android:id="@+id/button_subtract"
+        android:text="@string/button_subtract"
+        android:backgroundTint="@color/a2375a"
         android:textSize="18sp"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_columnWeight="1"
-        app:layout_rowWeight="1"/>
+        style="@style/Buttons"
+        tools:ignore="VisualLintButtonSize" />
 
     <!-- Row 4 -->
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn0"
-        android:text="0"
-        android:textColor="@android:color/white"
-        android:backgroundTint="#40928A"
+        android:id="@+id/button_0"
+        android:text="@string/button_0"
+        android:backgroundTint="@color/_40928a"
         android:textSize="20sp"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_columnWeight="1"
-        app:layout_rowWeight="1"/>
+        style="@style/Buttons"
+        tools:ignore="VisualLintButtonSize" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnpoint"
-        android:text="."
-        android:textColor="@android:color/white"
-        android:backgroundTint="#387B99"
+        android:id="@+id/button_dot"
+        android:text="@string/button_dot"
+        android:backgroundTint="@color/_387b99"
         android:textSize="20sp"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_columnWeight="1"
-        app:layout_rowWeight="1"/>
+        style="@style/Buttons"
+        tools:ignore="VisualLintButtonSize" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/equal"
-        android:text="="
-        android:textColor="@android:color/white"
-        android:backgroundTint="#387B99"
-    android:textSize="22sp"
-    android:textStyle="bold"
-    android:layout_width="0dp"
-    android:layout_height="0dp"
-    app:layout_columnWeight="1"
-    app:layout_rowWeight="1"/>
+        android:id="@+id/button_equal"
+        android:text="@string/button_equal"
+        android:backgroundTint="@color/_387b99"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        style="@style/Buttons"
+        tools:ignore="VisualLintButtonSize" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/percent"
-        android:text="%"
-        android:textColor="@android:color/white"
-        android:backgroundTint="#A2375A"
+        android:id="@+id/button_percentage"
+        android:text="@string/button_percentage"
+        android:backgroundTint="@color/a2375a"
         android:textSize="18sp"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_columnWeight="1"
-        app:layout_rowWeight="1"/>
+        style="@style/Buttons"
+        tools:ignore="VisualLintButtonSize" />
+
 </androidx.gridlayout.widget.GridLayout>

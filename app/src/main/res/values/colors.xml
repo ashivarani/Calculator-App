@@ -11,29 +11,52 @@
     <color name="blue">#00b3b3</color>
     <color name="pink"> #df9fbf</color>
     <color name="light"> #898990</color>
-    <color name="wblue"> #0077b3</color>
-    <color name="pblue"> #80d4ff</color>
+    <color name="wBlue"> #0077b3</color>
+    <color name="pB"> #80d4ff</color>
     <color name="psky"> #b3ecff</color>
     <color name="pb"> #8cb3d9</color>
     <color name="yellow"> #1a1a00</color>
     <color name="gold"> #ffd9b3</color>
-        <!-- App Background -->
-        <color name="background_royal_blue">#0D1B2A</color> <!-- Dark navy blue -->
+    <color name="page_bg">#F5F6FA</color>   <!-- Soft light gray background -->
+    <color name="card_bg">#FFFFFF</color>   <!-- Bright white card -->
+    <color name="gray">#D6D6D6</color>      <!-- Subtle border for cards -->
 
-        <!-- Number Buttons -->
-        <color name="number_button_bg">#1E88E5</color> <!-- Royal blue -->
-        <color name="number_button_text">#FFFFFF</color> <!-- White -->
+    <!-- App Background -->
+    <color name="background_royal_blue">#0D1B2A</color> <!-- Dark navy blue -->
 
-        <!-- Operator Buttons -->
-        <color name="operator_button_bg">#1565C0</color> <!-- Deep royal blue -->
-        <color name="operator_button_text">#FFEB3B</color> <!-- Bright yellow -->
+    <!-- Number Buttons -->
+    <color name="number_button_bg">#1E88E5</color> <!-- Royal blue -->
+    <color name="number_button_text">#FFFFFF</color> <!-- White -->
 
-        <!-- Equal Button -->
-        <color name="equal_button_bg">#F57C00</color> <!-- Bright orange -->
-        <color name="equal_button_text">#FFFFFF</color> <!-- White -->
+    <!-- Operator Buttons -->
+    <color name="operator_button_bg">#1565C0</color> <!-- Deep royal blue -->
+    <color name="operator_button_text">#FFEB3B</color> <!-- Bright yellow -->
 
-        <!-- Special Buttons (AC, C, OFF) -->
-        <color name="special_button_bg">#C62828</color> <!-- Strong red -->
-        <color name="special_button_text">#FFFFFF</color> <!-- White -->
+    <!-- Equal Button -->
+    <color name="equal_button_bg">#F57C00</color> <!-- Bright orange -->
+    <color name="equal_button_text">#FFFFFF</color> <!-- White -->
+
+    <!-- Special Buttons (AC, C, OFF) -->
+    <color name="special_button_bg">#C62828</color> <!-- Strong red -->
+    <color name="special_button_text">#FFFFFF</color>
+    <color name="_387b99">#387B99</color>
+    <color name="a2375a">#A2375A</color>
+    <color name="_40928a">#40928A</color> <!-- White -->
+    <!-- Primary app colors -->
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryVariant">#3700B3</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+
+    <!-- Text colors -->
+    <color name="text_primary">#000000</color>
+    <color name="text_secondary">#666666</color>
+
+    <!-- Card background tints -->
+    <color name="card_tint_light">#F5F5F5</color>
+    <color name="card_tint_alt">#E0E0E0</color>
+
+    <!-- Card border -->
+    <color name="gray_border">#BDBDBD</color>
+
 
 </resources>

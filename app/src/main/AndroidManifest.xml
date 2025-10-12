@@ -9,24 +9,11 @@
 
     <application
         android:allowBackup="true"
-        android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="Calculator App"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MyCalculator"
+        android:theme="@style/Theme.Calculator"
         tools:targetApi="31">
-
-        <!-- Display Activity -->
-        <activity
-            android:name=".DisplayActivity"
-            android:exported="true"
-            android:parentActivityName=".MainActivity">
-            <!-- Enables Up navigation -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-        </activity>
 
         <!-- Main Activity (Launcher) -->
         <activity
@@ -36,6 +23,17 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <!-- Display Activity -->
+        <activity
+            android:name=".DisplayActivity"
+            android:exported="true"
+            android:parentActivityName=".MainActivity">
+            <!-- Enables Up navigation in ActionBar -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
         </activity>
 
     </application>
