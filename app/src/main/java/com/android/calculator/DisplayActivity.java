@@ -1,74 +1,88 @@
 package com.android.calculator;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.text.method.ScrollingMovementMethod;
-import android.util.Log;
+import android.view.LayoutInflater;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import com.google.android.material.appbar.MaterialToolbar;
 import java.util.List;
 
+/**
+ * DisplayActivity shows the history of previous calculations
+ * from the calculator app database.
+ * Each history record is displayed in a CardView within a LinearLayout.
+ * If no history is present, a placeholder message is shown.
+ */
 public class DisplayActivity extends AppCompatActivity {
-
-    private static final String TAG = "DisplayActivity";
+    private final AppLogger logger = new AppLogger("DisplayActivity");
 
     @SuppressLint("SetTextI18n")
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.display_activity);
 
-        // Enable back button in action bar
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setTitle("Calculation History");
-        }
+        // Setup toolbar with back navigation
+        MaterialToolbar toolbar = findViewById(R.id.toolbar_display);
+        toolbar.setTitle("Calculation History");
+        toolbar.setNavigationOnClickListener(v -> {
+            logger.d("Back arrow tapped — finishing DisplayActivity");
+            finish();
+        });
 
-        Log.d(TAG, "onCreate: DisplayActivity started");
+        LinearLayout historyContainer = findViewById(R.id.container_history_records);
+        LayoutInflater inflater = LayoutInflater.from(this);
 
-        TextView out = findViewById(R.id.op);
-        out.setMovementMethod(new ScrollingMovementMethod()); // Allow scrolling
+        // Fetch history from database safely
         List<String> historyList;
-        try (DatabaseHelper dbHelper = new DatabaseHelper(this)) {
-            historyList = dbHelper.getAllRecordsList();
+        try (DatabaseHelper databaseHelper = new DatabaseHelper(this)) {
+            historyList = databaseHelper.getAllRecordsList();
+            logger.d("Fetched " + historyList.size() + " records from DB");
+        } catch (Exception e) {
+            logger.e("Error fetching history from DB", e);
+            historyList = List.of();
         }
 
-        if (!historyList.isEmpty()) {
-            StringBuilder formatted = new StringBuilder();
-            for (String record : historyList) {
-                formatted.append("➡ ").append(record).append("\n-----------------------------\n");
+        String[] calculationHistory = historyList.toArray(new String[0]);
+
+        // Display placeholder if no history
+        if (calculationHistory.length == 0) {
+            TextView emptyTextView = new TextView(this);
+            emptyTextView.setText("No calculation history available.");
+            emptyTextView.setTextSize(18);
+            emptyTextView.setPadding(32, 48, 32, 48);
+            emptyTextView.setTextAlignment(TextView.TEXT_ALIGNMENT_CENTER);
+            historyContainer.addView(emptyTextView);
+            logger.d("No history records found");
+            return;
+        }
+
+        // Display each history record in a CardView
+        logger.d("Displaying " + calculationHistory.length + " records");
+        for (String record : calculationHistory) {
+            if (record == null || record.trim().isEmpty()) {
+                logger.w("Skipped empty or null record");
+                continue;
             }
-            out.setText(formatted.toString().trim());
-        } else {
-            out.setText("No history available.");
-        }
-        String output = getIntent().getStringExtra("output");
 
-        if (output != null && !output.trim().isEmpty()) {
-            String[] records = output.split("\n");
-            StringBuilder formatted = new StringBuilder();
+            try {
+                CardView cardView = (CardView) inflater.inflate(
+                        R.layout.item_history_card, historyContainer, false);
+                TextView historyTextView = cardView.findViewById(R.id.text_history_record);
+                historyTextView.setText(record.trim());
 
-            for (String record : records) {
-                if (!record.trim().isEmpty()) {
-                    formatted.append("➡ ")
-                            .append(record.trim().replace(" =", "\n= "))
-                            .append("\n-----------------------------\n");
-                }
+                // Set card background tint
+                cardView.setCardBackgroundColor(getColor(R.color.card_tint_light));
+
+                historyContainer.addView(cardView);
+                logger.d("Added record to container: " + record);
+            } catch (Exception e) {
+                logger.e("Error inflating or adding history card for record: " + record, e);
             }
-
-            out.setText(formatted.toString().trim());
-            Log.d(TAG, "onCreate: Displaying " + records.length + " records");
-        } else {
-            out.setText("No history available.");
-            Log.d(TAG, "onCreate: No history to display");
         }
-    }
-
-    @Override
-    public boolean onSupportNavigateUp() {
-        finish();
-        return true;
     }
 }

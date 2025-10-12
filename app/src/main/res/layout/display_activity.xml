@@ -1,23 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
-    android:fillViewport="true"
-    android:padding="16dp"
     tools:context=".DisplayActivity">
 
-    <TextView
-        android:id="@+id/op"
+    <!-- Toolbar with Back button -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar_display"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:textColor="@android:color/black"
-        android:lineSpacingExtra="4dp"
-        android:scrollbars="vertical"
-        android:ellipsize="none"
-        android:singleLine="false"
-        android:gravity="start|top"
-        tools:text="3 + 2 = 5 [2025-09-10 20:15:00]\n7 * 6 = 42 [2025-09-10 20:16:00]\n..." />
-</ScrollView>
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.MaterialComponents.ActionBar"
+        app:title="Calculation History"
+        app:titleTextColor="@android:color/white"
+        app:navigationIcon="@drawable/ic_arrow_back_24" />
+
+    <!-- Scrollable History Records -->
+    <ScrollView
+        android:id="@+id/scroll_history"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:contentDescription="@string/example_calculation">
+
+        <LinearLayout
+            android:id="@+id/container_history_records"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"/>
+    </ScrollView>
+
+
+</LinearLayout>

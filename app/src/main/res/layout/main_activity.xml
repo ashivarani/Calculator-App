@@ -4,72 +4,67 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <!-- Clock -->
-    <TextClock
-        android:id="@+id/clock"
+    <!-- Toolbar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@color/psky"
-        android:format12Hour="hh:mm:ss"
-        android:gravity="center"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:title="Calculator App"
+        app:titleTextColor="@android:color/white"
+        app:menu="@menu/menu"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Input Display -->
     <TextView
-        android:id="@+id/input"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:id="@+id/text_input_display"
+        style="@style/input"
         android:gravity="end|center_vertical"
         android:padding="16dp"
-        android:text=""
-        android:textColor="@color/black"
-        android:textSize="40sp"
-        app:layout_constraintTop_toBottomOf="@id/clock"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textSize="32sp"
+        android:textColor="?attr/colorOnSurface"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.15"/>
+        app:layout_constraintHeight_percent="0.15" />
 
     <!-- Output Display -->
     <TextView
-        android:id="@+id/output"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:id="@+id/text_output_display"
+        style="@style/output"
         android:gravity="end|center_vertical"
         android:padding="16dp"
-        android:text=""
-        android:textColor="@color/black"
-        android:textSize="60sp"
-        app:layout_constraintTop_toBottomOf="@id/input"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textSize="24sp"
+        android:textColor="?attr/colorOnSurface"
+        app:layout_constraintTop_toBottomOf="@id/text_input_display"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.15"/>
+        app:layout_constraintHeight_percent="0.15" />
 
-    <!-- Buttons Section -->
+    <!-- Buttons Grid -->
     <androidx.gridlayout.widget.GridLayout
-        android:id="@+id/buttons_grid"
+        android:id="@+id/grid_buttons"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:alignmentMode="alignMargins"
         app:columnCount="4"
-        app:layout_constraintTop_toBottomOf="@id/output"
+        app:rowCount="5"
+        app:alignmentMode="alignMargins"
+        app:useDefaultMargins="true"
+        app:layout_constraintTop_toBottomOf="@id/text_output_display"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:rowCount="5"
-        app:useDefaultMargins="true">
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Include your buttons layout -->
         <include
             layout="@layout/buttons_layout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
+            android:layout_height="match_parent"/>
     </androidx.gridlayout.widget.GridLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
