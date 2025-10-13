@@ -91,13 +91,20 @@ Special handling for Android 13+ (POST_NOTIFICATIONS permission)
 
 _com.android.calculator_
 
-│
+
+
 ├─ MainActivity.java           # Handles calculator UI, button interactions, history menu
+
 ├─ ExpressionEvaluator.java   # Evaluates expressions, manages input, real-time result
+
 ├─ DatabaseHelper.java        # SQLite database helper for storing calculation history
+
 ├─ DisplayActivity.java       # Displays history in CardView layout
+
 ├─ NotificationHelper.java    # Handles notifications and permissions
+
 ├─ AppLogger.java             # Central logging utility for debugging
+
 
 **Dependencies**
 
