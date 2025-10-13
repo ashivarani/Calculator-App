@@ -88,7 +88,9 @@ Special handling for Android O+ (notification channels)
 Special handling for Android 13+ (POST_NOTIFICATIONS permission)
 
 **Project Structure**
+
 _com.android.calculator_
+
 │
 ├─ MainActivity.java           # Handles calculator UI, button interactions, history menu
 ├─ ExpressionEvaluator.java   # Evaluates expressions, manages input, real-time result
