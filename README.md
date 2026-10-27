@@ -1,145 +1,217 @@
-Android Calculator App
+# 🧮 Calculator App – Android Application
+
+## 📌 Project Description
 
-A modern, fully-featured calculator Android app with expression evaluation, real-time results, history management, and notification support.
+**Calculator App** is an Android application developed using **Java** in **Android Studio**. The application provides basic arithmetic operations, real-time calculation previews, and a history feature to store and view previous calculations.
+
+It uses the **exp4j library** for mathematical expression evaluation and **SQLite** for storing calculation history. The application also includes a Material Design-style interface and welcome notifications.
 
-Features
-**Basic Arithmetic Operations**
+This project demonstrates Android application development, mathematical expression handling, database integration, and notification management using Java and XML.
 
-Addition (+), Subtraction (-), Multiplication (*), Division (/)
+## ✨ Features
 
-Percentage (%) and Decimal (.) support
+- ➕ **Basic Arithmetic Operations:** Perform addition, subtraction, multiplication, and division.
+- 🔢 **Percentage and Decimal Support:** Enter percentage and decimal calculations.
+- ⚡ **Real-Time Calculation:** Display calculation previews as users enter expressions.
+- 🧮 **Expression Evaluation:** Evaluate mathematical expressions using the exp4j library.
+- ⌫ **Clear Functionality:** Remove the last entered character using the `C` button.
+- 🔄 **All Clear:** Reset the current expression and result using `AC`.
+- 💾 **Calculation History:** Store completed calculations in a local SQLite database.
+- 📜 **View History:** Display previous calculations in a scrollable CardView layout.
+- 🗑️ **Delete History:** Clear stored calculation records using the `Del` button.
+- 🔔 **Welcome Notification:** Display a notification when the application launches, subject to notification permissions.
+- 🎨 **User-Friendly Interface:** Uses XML layouts and Material Design components.
 
-Real-time calculation as user types
+## 🛠️ Technologies Used
 
-**Expression Evaluation**
+| Technology | Purpose |
+|---|---|
+| Java | Application development |
+| Android Studio | Development environment |
+| XML | User interface design |
+| Android SDK | Android application development |
+| SQLite | Calculation history storage |
+| exp4j | Mathematical expression evaluation |
+| Material Components | UI components |
+| AndroidX | Android support libraries |
+| Gradle | Build automation |
 
-Handles complex expressions using exp4j library
+## 📂 Project Structure
 
-Correctly handles operator precedence and multiple operations
+```text
+Calculator-App-master/
+│
+├── app/
+│   ├── src/main/
+│   │   ├── java/com/android/calculator/
+│   │   │   ├── MainActivity.java
+│   │   │   ├── ExpressionEvaluator.java
+│   │   │   ├── DatabaseHelper.java
+│   │   │   ├── DisplayActivity.java
+│   │   │   ├── NotificationHelper.java
+│   │   │   └── AppLogger.java
+│   │   │
+│   │   ├── res/
+│   │   │   ├── layout/
+│   │   │   │   ├── main_activity.xml
+│   │   │   │   ├── buttons_layout.xml
+│   │   │   │   ├── display_activity.xml
+│   │   │   │   └── item_history_card.xml
+│   │   │   │
+│   │   │   └── menu/
+│   │   │       └── menu.xml
+│   │   │
+│   │   └── AndroidManifest.xml
+│   │
+│   └── build.gradle
+│
+├── build.gradle
+├── settings.gradle
+└── README.md
+```
 
-Displays result in real-time below input
+### Main Components
 
-**Input Management**
+**MainActivity.java**
 
-Numeric input buttons (0–9)
+Handles calculator initialization, button interactions, history navigation, and notification setup.
 
-Operator buttons (+, -, *, /, %)
+**ExpressionEvaluator.java**
 
-Decimal point input with validation (prevents multiple dots in a number segment)
+Performs expression evaluation, updates real-time results, handles input controls, and saves completed calculations.
 
-Clear (C) button: deletes last character
+**DatabaseHelper.java**
 
-All Clear (AC) button: resets input and result
+Manages SQLite database operations, including inserting, retrieving, and deleting calculation history records.
 
-Delect Records (DEL): deletes db stored history records
+**DisplayActivity.java**
 
-**Calculation History**
+Displays previous calculations in a scrollable list of cards.
 
-Stores expressions and results in SQLite database (DatabaseHelper)
+**NotificationHelper.java**
 
-History includes full expression with result (e.g., 2+2=4)
+Manages welcome notifications, notification channels, and runtime permission requests.
 
-History can be viewed via History menu
+**AppLogger.java**
 
-Displayed as cards in a scrollable list (DisplayActivity)
+Provides logging functionality for debugging application events and errors.
 
-Option to clear all history with OFF button
+## 🚀 Installation and Setup
 
-**Notifications**
+### Prerequisites
 
-Shows a welcome notification when the app opens
+- Android Studio
+- Android SDK
+- Android device or emulator
+- Internet connection for initial Gradle dependency downloads
 
-Compatible with Android 13+ permission system
+### Step 1: Download the Project
 
-Non-persistent notification that opens app when tapped
+Download the project ZIP file from GitHub and extract it, or clone the repository using Git.
 
-Handles permission denied scenario with App Settings dialog (NotificationHelper)
+### Step 2: Open in Android Studio
 
-**Logging and Debugging**
+1. Launch Android Studio.
+2. Select **Open**.
+3. Navigate to the extracted Calculator App project folder.
+4. Wait for Gradle synchronization to complete.
 
-All major actions, errors, and events are logged using AppLogger
+### Step 3: Run the Application
 
-#### Logs include:
+1. Connect an Android device or launch an emulator.
+2. Select the target device.
+3. Click **Run** in Android Studio.
+4. The calculator application launches.
+5. Allow notification permission if prompted.
 
-Button presses
+## 📱 How to Use
 
-Expression evaluation results
+1. Open the **Calculator App**.
+2. Enter numbers using the calculator buttons.
+3. Select an arithmetic operator such as `+`, `-`, `×`, or `/`.
+4. View the calculation preview displayed below the expression.
+5. Press `=` to calculate the final result and save the calculation.
+6. Use `C` to remove the last character or `AC` to clear the current calculation.
+7. Tap the **History** icon to view previous calculations.
+8. Use **Del** to clear all stored calculation history.
 
-Database operations (insert, fetch, delete)
+## ⚙️ How It Works
 
-Notification permission and display events
+### 1. Mathematical Expression Evaluation
 
-**UI Features**
+The application uses the **exp4j** library to evaluate mathematical expressions.
 
-Modern Material Design layout
+It supports basic arithmetic operations and operator precedence.
 
-Toolbar with back navigation in history screen (DisplayActivity)
+### 2. Real-Time Result Display
 
-History displayed in CardView for clean visualization
+As users enter numbers and valid expressions, the application evaluates the current input and displays a preview of the calculated result.
 
-Dynamic updates for input and result display
+### 3. Calculation History
 
-**Compatibility**
+Completed calculations are stored using SQLite through `DatabaseHelper.java`.
 
-Supports Android API level 21+
+The database maintains calculation expressions and their results.
 
-Special handling for Android O+ (notification channels)
+### 4. History Display
 
-Special handling for Android 13+ (POST_NOTIFICATIONS permission)
+The history screen retrieves saved calculations from SQLite and displays them using Material-style cards.
 
-**Project Structure**
+Records are displayed with the newest calculations first.
 
-_com.android.calculator_
+### 5. Notification Management
 
+When the application launches, it attempts to display a welcome notification.
 
+The implementation supports notification channels on Android 8.0 and later and requests notification permission on Android 13 and later.
 
-├─ MainActivity.java           # Handles calculator UI, button interactions, history menu
+### 6. Logging
 
-├─ ExpressionEvaluator.java   # Evaluates expressions, manages input, real-time result
+The application uses `AppLogger` to record events such as button interactions, calculation results, database operations, and errors.
 
-├─ DatabaseHelper.java        # SQLite database helper for storing calculation history
+## 📌 Project Information
 
-├─ DisplayActivity.java       # Displays history in CardView layout
+| Detail | Description |
+|---|---|
+| Project Name | Calculator App |
+| Application Type | Android Calculator |
+| Programming Language | Java |
+| IDE | Android Studio |
+| User Interface | XML |
+| Expression Library | exp4j |
+| Database | SQLite |
+| Minimum SDK | API 24 (Android 7.0) |
+| Target SDK | API 34 |
+| Compile SDK | API 36 |
+| Application Version | 1.0 |
 
-├─ NotificationHelper.java    # Handles notifications and permissions
+## ⚠️ Current Limitations
 
-├─ AppLogger.java             # Central logging utility for debugging
+- The project is configured for Android 7.0 and above, but the `=` button requires Android 8.0 or later in the current code.
+- Percentage calculations are converted during final evaluation, so live percentage previews may differ from the final result.
+- The `Del` button deletes all calculation history rather than individual records.
+- The application does not include scientific calculator functions.
+- Calculation history is stored locally without cloud synchronization.
 
+## 🎯 Learning Outcomes
 
-**Dependencies**
+This project demonstrates:
 
-exp4j
-— Expression evaluation library
+- Developing Android applications using Java.
+- Designing interfaces using XML layouts.
+- Implementing arithmetic operations and expression evaluation.
+- Integrating third-party Java libraries.
+- Storing and retrieving information using SQLite.
+- Displaying calculation history with Material UI components.
+- Implementing Android notifications.
+- Managing runtime permissions.
+- Handling user interactions and application events.
 
-AndroidX libraries for Material Design (MaterialButton, MaterialToolbar, CardView)
+## 📝 Conclusion
 
-_Usage_
+**Calculator App** is a Java-based Android project that demonstrates arithmetic expression evaluation, real-time result previews, calculation history management, and notification integration.
 
-Open the app.
-
-Input numbers and operators using buttons.
-
-Results are updated in real-time below input.
-
-Press = to evaluate expression and save it to history.
-
-Open History menu to view all previous calculations.
-
-Press OFF to clear all calculation history.
-
-Notifications appear on app launch (permission required on Android 13+).
-
-_Logging_
-
-Use AppLogger for debugging:
-
-logger.d("Debug message") for info
-
-logger.v("Verbose message") for detailed info
-
-logger.w("Warning message") for potential issues
-
-logger.e("Error message", throwable) for exceptions
+It provides practical experience in Android UI development, SQLite database operations, and third-party library integration, making it a useful project for learning Android application development.
 
 
 ![image2](https://github.com/user-attachments/assets/c73d0d46-6e0d-4a67-b50a-4acdd9f6da7c)
