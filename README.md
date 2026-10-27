@@ -213,8 +213,3 @@ This project demonstrates:
 
 It provides practical experience in Android UI development, SQLite database operations, and third-party library integration, making it a useful project for learning Android application development.
 
-
-![image2](https://github.com/user-attachments/assets/c73d0d46-6e0d-4a67-b50a-4acdd9f6da7c)
-![image1](https://github.com/user-attachments/assets/7e1830aa-d3f4-45c6-9606-0c60be96ce15)
-![image0](https://github.com/user-attachments/assets/ef37b33c-d388-4f91-840a-4953019d4414)
-
